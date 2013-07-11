@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    #@post.author_id = params[:author_id] alternate way to pass id to form
     @author = Author.find(params[:author_id])
 
     respond_to do |format|
