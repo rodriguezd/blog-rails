@@ -6,9 +6,14 @@ BlogRails::Application.routes.draw do
   resources :posts
 
   resources :authors do
-    resources :posts
+    resources :posts, only: [:new]
   end
 
+  resources :posts do
+    resources :comments, only: [:new]
+  end
+
+  root :to => 'authors#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,4 +1,4 @@
-<h1>Listing authors</h1>
+<h1>Authors</h1>
 
 <table>
   <tr>
@@ -13,7 +13,7 @@
     <td><%= author.name %></td>
     <td><%= link_to 'Show', author %></td>
     <td><%= link_to 'Edit', edit_author_path(author) %></td>
-    <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

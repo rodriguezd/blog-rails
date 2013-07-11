@@ -14,4 +14,7 @@ class Comment < ActiveRecord::Base
   attr_accessible :body, :post_id, :submitter
 
   belongs_to :post
+
+  validates :submitter, presence: true
+  validates :body, presence: true
 end
