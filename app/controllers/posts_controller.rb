@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @author = Author.find(params[:author_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,8 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @author = Author.find(@post.author_id)
+
   end
 
   # POST /posts

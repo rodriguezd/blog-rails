@@ -4,7 +4,17 @@
   <b>Name:</b>
   <%= @author.name %>
 </p>
-
+<p>
+  <b>Posts</b>
+  <ul>
+  <% @author.posts.each do |post| %>
+  <li><%= link_to post.title, post %></li>
+  <% end %>
+</ul>
+</p>
+<p>
+<%= link_to 'Add Post', new_author_post_path(@author) %>
+</p>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>

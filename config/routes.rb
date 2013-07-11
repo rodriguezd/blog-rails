@@ -1,11 +1,13 @@
 BlogRails::Application.routes.draw do
   resources :comments
 
-
   resources :authors
 
-
   resources :posts
+
+  resources :authors do
+    resources :posts
+  end
 
 
   # The priority is based upon order of creation:
